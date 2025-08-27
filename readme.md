@@ -34,34 +34,30 @@ pip install -r requirements.txt
 
 
 ## Usage
-```bash
-python remove-bg.py [options]
-```
-
-
-### Examples
-1. Basic usage (black as background, auto threads)
+Place your input images in the `input` directory and your mask images in the `mask` directory. Then run:
 ```bash
 python remove-bg.py
 ```
 
-2. Use 8 threads, remove white background with threshold 20
+
+### Other Examples
+
+1. Use 8 threads, remove white background with threshold 20
 ```bash
 python remove-bg.py --workers 8 --mask-mode white --threshold 20
 ```
 
-3. Remove green screen (RGB 0,255,0) within tolerance 12
+2. Remove green screen (RGB 0,255,0) within tolerance 12
 ```bash
 python remove-bg.py --mask-mode color --color 0,255,0 --color-tolerance 12
 ```
 
-4. Disable renaming and cropping
+3. Disable renaming and cropping
    
 ```bash
 python remove-bg.py --no-rename --no-crop
 ```
-
-5. Custom input/output folders
+4 Custom input/output folders
 ```bash
 python remove-bg.py --input photos --mask masks --output cleaned
 ```
