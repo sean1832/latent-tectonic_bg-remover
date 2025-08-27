@@ -1,4 +1,8 @@
 venv/
-input/
-mask/
+input/*
+mask/*
 output/
+
+# Keep these directories
+!input/.gitkeep
+!mask/.gitkeep
