@@ -11,17 +11,23 @@ This tool is build for batch processing of images to remove backgrounds using ma
 
 ## Installation
 1. Clone the repo
-```
+```bash
 git clone https://github.com/sean1832/latent-tectonic_bg-remover.git
 ```
 
 2. Navigate to the project directory
-```
+```bash
 cd latent-tectonic_bg-remover
 ```
 
-3. Install the required packages
+3. Create and activate a virtual environment (optional but recommended)
+```bash
+python -m venv venv
+./venv/bin/activate
 ```
+
+4. Install the required packages
+```bash
 pip install -r requirements.txt
 ```
 
@@ -29,35 +35,37 @@ pip install -r requirements.txt
 
 ## Usage
 ```bash
-python main.py [options]
+python remove-bg.py [options]
 ```
 
 
 ### Examples
 1. Basic usage (black as background, auto threads)
 ```bash
-python main.py
+python remove-bg.py
+```bash
+python remove-bg.py
 ```
 
 2. Use 8 threads, remove white background with threshold 20
 ```bash
-python main.py --workers 8 --mask-mode white --threshold 20
+python remove-bg.py --workers 8 --mask-mode white --threshold 20
 ```
 
 3. Remove green screen (RGB 0,255,0) within tolerance 12
 ```bash
-python main.py --mask-mode color --color 0,255,0 --color-tolerance 12
+python remove-bg.py --mask-mode color --color 0,255,0 --color-tolerance 12
 ```
 
 4. Disable renaming and cropping
    
 ```bash
-python main.py --no-rename --no-crop
+python remove-bg.py --no-rename --no-crop
 ```
 
 5. Custom input/output folders
 ```bash
-python main.py --input photos --mask masks --output cleaned
+python remove-bg.py --input photos --mask masks --output cleaned
 ```
 
 ### Commands
