@@ -43,8 +43,6 @@ python remove-bg.py [options]
 1. Basic usage (black as background, auto threads)
 ```bash
 python remove-bg.py
-```bash
-python remove-bg.py
 ```
 
 2. Use 8 threads, remove white background with threshold 20
